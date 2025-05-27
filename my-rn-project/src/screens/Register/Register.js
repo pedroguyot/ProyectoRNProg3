@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { db, auth } from '../../firebase/config';
 
 class Register extends Component {
     constructor() {
@@ -7,16 +8,34 @@ class Register extends Component {
         this.state = {
             email: '',
             userName: '',
-            password: ''
+            password: '',
+            registered: false
         };
     }
 
-    registro() {
+    registro(email, userName, password) {
         console.log('Email ingresado: ', this.state.email);
         console.log('Username ingresado: ', this.state.userName);
         console.log('Password ingresado: ', this.state.password);
 
-    
+        auth.createUserWithEmailAndPassword(email, password)
+            .then( response => {
+                db.collection('users').add({
+                    email: auth.currentUser.email,
+                    userName: userName,
+                    createdAt: Date.now()
+                })
+                    .then(() => {
+                        this.setState({ registered: true });
+                        this.props.navigation.navigate('Home');
+                    })
+                    .catch( e => console.log(e));
+            })
+            .catch( error => {
+                this.setState({error: 'Fallo en el registro'})
+                console.log(error)
+            })
+        
     }
 
     render() {
@@ -47,7 +66,7 @@ class Register extends Component {
                     value={this.state.password}
                 />
 
-                <TouchableOpacity style={styles.button} onPress={() => this.registro()}>
+                <TouchableOpacity style={styles.button} onPress={() => this.registro(this.state.email, this.state.userName, this.state.password)}>
                     <Text style={styles.buttonText}>Registrarse</Text>
                 </TouchableOpacity>
 
