@@ -9,7 +9,8 @@ class Register extends Component {
             email: '',
             userName: '',
             password: '',
-            registered: false
+            registered: false,
+            error: ''
         };
     }
 
@@ -19,7 +20,7 @@ class Register extends Component {
         console.log('Password ingresado: ', this.state.password);
 
         auth.createUserWithEmailAndPassword(email, password)
-            .then( response => {
+            .then(response => {
                 db.collection('users').add({
                     email: auth.currentUser.email,
                     userName: userName,
@@ -29,19 +30,24 @@ class Register extends Component {
                         this.setState({ registered: true });
                         this.props.navigation.navigate('Home');
                     })
-                    .catch( e => console.log(e));
+                    .catch(e => console.log(e));
             })
-            .catch( error => {
-                this.setState({error: 'Fallo en el registro'})
+            .catch(error => {
+                this.setState({ error: error.message })
                 console.log(error)
             })
-        
+
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>Registrar Usuario</Text>
+
+                {this.state.error ? (
+                    <Text style={styles.errorText}>{this.state.error}</Text>
+                ) : null}
+
 
                 <TextInput
                     style={styles.input}
@@ -118,6 +124,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+    errorText: {
+        color: 'red',
+        marginTop: 10,
+        textAlign: 'center'
+    }
+
 });
 
 export default Register;
