@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activo: false,
+        }
+    }
+
+
+    render() {
+        return (
+            <View>
+                <Text>Pantalla Home</Text>
+            </View>
+        )
+    }
+}
+
+
+export default Home;
