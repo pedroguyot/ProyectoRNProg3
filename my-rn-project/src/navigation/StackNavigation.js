@@ -3,12 +3,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Register from '../screens/Register/Register'
 import Login from "../screens/Login/Login";
 import Home from "../screens/Home/Home";
+import RemerberMe from "../screens/RemerberMe/RemerberMe";
 
 const Stack = createNativeStackNavigator();
 
 function StackNavigation() { 
     return(
         <Stack.Navigator>
+        <Stack.Screen 
+            name='RemerberMe' 
+            component={RemerberMe} 
+            options={{ headerShown: false }} />
         <Stack.Screen 
             name='Register' 
             component={Register} 
