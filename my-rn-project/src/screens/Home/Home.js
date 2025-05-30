@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { db } from '../../firebase/config';
 import Posteo from '../Posteo/Posteo';
+import { FlatList } from 'react-native-web';
 
 class Home extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class Home extends Component {
                     <ActivityIndicator size="large" color="blue" />
                 ) : (
 
-                    <FlatList
+                    <FlatList style={styles.FlatList}
                         data={this.state.posts}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => <Posteo postData={item} />}
@@ -54,12 +55,16 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 2,
         padding: 20
     },
     title: {
         fontSize: 22,
         fontWeight: 'bold',
         marginBottom: 10
+    },
+    FlatList: {
+        width: '100%',
+        flex: 1
     }
 });
