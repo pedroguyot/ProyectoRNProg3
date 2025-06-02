@@ -15,7 +15,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-    
+
 
         db.collection('posts')
             .orderBy('createdAt', 'desc')
@@ -39,13 +39,12 @@ class Home extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text> Home </Text>
-                <Text>Ir a posteos</Text>
+                <Text style={styles.title}>Home</Text>
                 {this.state.loading ? (
                     <ActivityIndicator size="large" color="blue" />
                 ) : (
-
-                    <FlatList style={styles.FlatList}
+                    <FlatList
+                        style={styles.FlatList}
                         data={this.state.posts}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item }) => <MostrarPost postData={item} />}

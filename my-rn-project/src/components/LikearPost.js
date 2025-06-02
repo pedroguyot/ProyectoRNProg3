@@ -23,7 +23,7 @@ export default class LikearPost extends Component {
 
 
     darLike() {
-    db.collection("users")
+    db.collection("posts")
       .doc(this.props.id)
       .update({
         likes: firebase.firestore.FieldValue.arrayUnion(
@@ -39,7 +39,7 @@ export default class LikearPost extends Component {
   }
 
   sacarLike() {
-    db.collection("users")
+    db.collection("posts")
       .doc(this.props.id)
       .update({
         likes: firebase.firestore.FieldValue.arrayRemove(
