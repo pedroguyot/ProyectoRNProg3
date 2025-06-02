@@ -4,6 +4,7 @@ import Register from '../screens/Register/Register'
 import Login from "../screens/Login/Login";
 import Home from "../screens/Home/Home";
 import RemerberMe from "../screens/RemerberMe/RemerberMe";
+import BottomTabs from "./BottomTabs";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ function StackNavigation() {
             options={{ headerShown: false }} />
         <Stack.Screen 
             name='Home' 
-            component={Home} 
+            component={BottomTabs} 
             options={{ headerShown: false }} />
         
       </Stack.Navigator>
