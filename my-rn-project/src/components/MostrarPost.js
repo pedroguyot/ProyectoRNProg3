@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, FlatList, StyleSheet } from 'react-native'
 import { db } from '../firebase/config'
-import NuevoPost from '../screens/NuevoPosteo/NuevoPost'
+import LikearPost from './LikearPost'
 
 class MostrarPost extends Component {
     constructor(props){
@@ -47,7 +47,7 @@ class MostrarPost extends Component {
                     data={this.state.posts}
                     keyExtractor={(item) => item.id}
                     renderItem={({item}) => (
-                        <NuevoPost data={item.data} id={item.id}/>
+                        <LikearPost data={item.data} id={item.id}/>
                     )}
                     />
                 )}
@@ -59,3 +59,19 @@ class MostrarPost extends Component {
 }
 
 export default MostrarPost;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 2,
+        padding: 20
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 10
+    },
+    FlatList: {
+        width: '100%',
+        flex: 1
+    }
+});

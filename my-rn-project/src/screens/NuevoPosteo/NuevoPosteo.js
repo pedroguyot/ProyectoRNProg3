@@ -7,6 +7,8 @@ export default class NuevoPost extends Component {
     super(props);
     this.state = {
         value: '',
+        data: props.data,
+        id: props.id,
     };
   }
 

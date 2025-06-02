@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { db } from '../../firebase/config';
-import NuevoPosteo from '../NuevoPosteo/NuevoPosteo';
+import MostrarPost from '../../components/MostrarPost';
 import { FlatList } from 'react-native-web';
-import RemerberMe from '../RemerberMe/RemerberMe';
+
 
 class Home extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        <RemerberMe />
+    
 
         db.collection('posts')
             .orderBy('createdAt', 'desc')
@@ -48,7 +48,7 @@ class Home extends Component {
                     <FlatList style={styles.FlatList}
                         data={this.state.posts}
                         keyExtractor={(item) => item.id}
-                        renderItem={({ item }) => <NuevoPosteo postData={item} />}
+                        renderItem={({ item }) => <MostrarPost postData={item} />}
                     />
                 )}
             </View>

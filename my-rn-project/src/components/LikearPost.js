@@ -58,6 +58,7 @@ export default class LikearPost extends Component {
     return (
       <View style={styles.container}>
         <Text>{this.props.data.owner}</Text>
+        <Text>{this.props.data.post}</Text>
         <Text>Likes: {this.state.cantLikes}</Text>
         {this.state.like ? (
           <TouchableOpacity onPress={() => this.sacarLike()}>
@@ -72,3 +73,19 @@ export default class LikearPost extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 2,
+        padding: 20
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 10
+    },
+    FlatList: {
+        width: '100%',
+        flex: 1
+    }
+});
