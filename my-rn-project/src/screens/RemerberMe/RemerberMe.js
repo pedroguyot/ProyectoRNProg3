@@ -7,6 +7,7 @@ class RemerberMe extends Component {
         auth.onAuthStateChanged(user => {
             if (user) {
                 this.props.navigation.replace('Home');
+                console.log('Salio bien')
             } else {
                 this.props.navigation.replace('Login');
             }

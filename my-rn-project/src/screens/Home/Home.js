@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { db } from '../../firebase/config';
 import Posteo from '../Posteo/Posteo';
 import { FlatList } from 'react-native-web';
+import RemerberMe from '../RemerberMe/RemerberMe';
 
 class Home extends Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        <RemerberMe />
+
         db.collection('posts')
             .orderBy('createdAt', 'desc')
             .onSnapshot(docs => {
@@ -36,6 +39,8 @@ class Home extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text> Home </Text>
+                <Text>Ir a posteos</Text>
                 {this.state.loading ? (
                     <ActivityIndicator size="large" color="blue" />
                 ) : (

@@ -10,10 +10,7 @@ const Stack = createNativeStackNavigator();
 function StackNavigation() { 
     return(
         <Stack.Navigator>
-        <Stack.Screen 
-            name='RemerberMe' 
-            component={RemerberMe} 
-            options={{ headerShown: false }} />
+        
         <Stack.Screen 
             name='Register' 
             component={Register} 
@@ -26,6 +23,7 @@ function StackNavigation() {
             name='Home' 
             component={Home} 
             options={{ headerShown: false }} />
+        
       </Stack.Navigator>
     )
 }

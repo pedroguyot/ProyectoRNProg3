@@ -33,18 +33,18 @@ class Login extends Component {
                     <Text style={styles.errorText}>{this.state.error}</Text>
                 ) : null}
 
-                <TextInput
+                <TextInput style={styles.input}
                     keyboardType='emial-address'
                     value={this.state.email}
                     onChangeText={(text) => this.setState({ email: text })}
-                    style={styles.input}
+                    
                 />
 
-                <TextInput
+                <TextInput style={styles.input}
                     keyboardType='default'
                     value={this.state.password}
                     onChangeText={(text) => this.setState({ password: text })}
-                    style={styles.input}
+                    
                 />
 
                 <TouchableOpacity

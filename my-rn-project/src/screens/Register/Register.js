@@ -14,6 +14,17 @@ class Register extends Component {
         };
     }
 
+    componentDidMount() {
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    this.props.navigation.replace('Home');
+                    console.log('Salio bien')
+                } else {
+                    this.props.navigation.replace('Login');
+                }
+            });
+        }
+
     registro(email, userName, password) {
         console.log('Email ingresado: ', this.state.email);
         console.log('Username ingresado: ', this.state.userName);
