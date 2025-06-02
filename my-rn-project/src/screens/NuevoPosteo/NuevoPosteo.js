@@ -44,3 +44,19 @@ export default class NuevoPost extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 2,
+        padding: 20
+    },
+    title: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 10
+    },
+    FlatList: {
+        width: '100%',
+        flex: 1
+    }
+});
