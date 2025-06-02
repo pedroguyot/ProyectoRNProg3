@@ -16,11 +16,10 @@ class Register extends Component {
 
     componentDidMount() {
             auth.onAuthStateChanged(user => {
+                console.log(user)
                 if (user) {
                     this.props.navigation.replace('Home');
                     console.log('Salio bien')
-                } else {
-                    this.props.navigation.replace('Login');
                 }
             });
         }

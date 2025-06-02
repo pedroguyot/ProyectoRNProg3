@@ -35,6 +35,7 @@ class Login extends Component {
 
                 <TextInput style={styles.input}
                     keyboardType='emial-address'
+                    placeholder='Email'
                     value={this.state.email}
                     onChangeText={(text) => this.setState({ email: text })}
                     
@@ -42,19 +43,21 @@ class Login extends Component {
 
                 <TextInput style={styles.input}
                     keyboardType='default'
+                    placeholder='Password'
                     value={this.state.password}
                     onChangeText={(text) => this.setState({ password: text })}
                     
                 />
 
-                <TouchableOpacity
+                <TouchableOpacity style={styles.button}
                     onPress={() => this.loguearUsuario(this.state.email, this.state.password)}
                 >
 
                     <Text style={styles.buttonText}>Ingresar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
+                <TouchableOpacity style={styles.buttonSecondary} 
+                    onPress={() => this.props.navigation.navigate('Register')}>
                     <Text style={styles.buttonText}>¿No tenes cuenta? Regitrate aca</Text>
                 </TouchableOpacity>
 
