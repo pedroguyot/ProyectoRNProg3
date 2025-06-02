@@ -62,7 +62,7 @@ export default class LikearPost extends Component {
         <Text>Likes: {this.state.cantLikes}</Text>
         {this.state.like ? (
           <TouchableOpacity onPress={() => this.sacarLike()}>
-            <Text>Me Gusta</Text>
+            <Text>Quitar me gusta</Text>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity onPress={() => this.darLike()}>
