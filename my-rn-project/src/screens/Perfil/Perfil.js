@@ -4,23 +4,23 @@ import { db, auth } from '../../firebase/config';
 import Usuario from '../../components/Usuario';
 
 export default class Perfil extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-  
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+
     }
-
-
-
-
-  logout(){
-    auth.signOut()
-    .then(()=> this.props.navigation.navigate('Login'))
-    .catch(error => console.log('error en logout', error))
   }
 
-  render(){
+
+
+
+  logout() {
+    auth.signOut()
+      .then(() => this.props.navigation.navigate('Login'))
+      .catch(error => console.log('error en logout', error))
+  }
+
+  render() {
     return (
       <View>
         <Text>Mi Perfil</Text>

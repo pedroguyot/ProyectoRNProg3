@@ -102,49 +102,52 @@ class Register extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        padding: 25,
         justifyContent: 'center',
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#121212',
     },
     title: {
-        fontSize: 24,
-        marginBottom: 20,
+        fontSize: 28,
+        marginBottom: 25,
         textAlign: 'center',
-        fontWeight: 'bold',
-        color: '#333',
+        fontWeight: '700',
+        color: '#e0e0e0',
     },
     input: {
-        height: 45,
-        borderColor: '#ccc',
+        height: 48,
+        borderColor: '#333',
         borderWidth: 1,
-        borderRadius: 6,
-        paddingHorizontal: 10,
-        marginBottom: 15,
-        backgroundColor: 'white',
+        borderRadius: 8,
+        paddingHorizontal: 15,
+        marginBottom: 18,
+        backgroundColor: '#1e1e1e',
+        fontSize: 16,
+        color: '#f5f5f5',
     },
     button: {
-        backgroundColor: '#007AFF',
-        paddingVertical: 12,
-        borderRadius: 6,
-        marginBottom: 10,
+        backgroundColor: '#0a84ff',
+        paddingVertical: 14,
+        borderRadius: 8,
+        marginBottom: 12,
     },
     buttonSecondary: {
-        backgroundColor: '#555',
-        paddingVertical: 12,
-        borderRadius: 6,
+        backgroundColor: '#333',
+        paddingVertical: 14,
+        borderRadius: 8,
     },
     buttonText: {
         color: 'white',
         textAlign: 'center',
-        fontSize: 16,
-        fontWeight: 'bold',
+        fontSize: 18,
+        fontWeight: '700',
     },
     errorText: {
-        color: 'red',
-        marginTop: 10,
-        textAlign: 'center'
-    }
-
+        color: '#e04848',
+        marginBottom: 15,
+        textAlign: 'center',
+        fontWeight: '600',
+    },
 });
+
 
 export default Register;

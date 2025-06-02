@@ -59,16 +59,19 @@ export default Home;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 2,
-        padding: 20
+        flex: 1,
+        padding: 20,
+        backgroundColor: '#121212',
     },
     title: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        marginBottom: 10
+        fontSize: 26,
+        fontWeight: '700',
+        marginBottom: 15,
+        color: '#e0e0e0',
+        textAlign: 'center',
     },
     FlatList: {
         width: '100%',
-        flex: 1
-    }
+        flex: 1,
+    },
 });

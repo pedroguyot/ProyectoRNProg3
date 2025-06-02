@@ -7,24 +7,24 @@ import BottomTabs from "./BottomTabs";
 
 const Stack = createNativeStackNavigator();
 
-function StackNavigation() { 
-    return(
+function StackNavigation() {
+    return (
         <Stack.Navigator>
-        
-        <Stack.Screen 
-            name='Register' 
-            component={Register} 
-            options={{ headerShown: false }} />
-        <Stack.Screen 
-            name='Login' 
-            component={Login} 
-            options={{ headerShown: false }} />
-        <Stack.Screen 
-            name='Home' 
-            component={BottomTabs} 
-            options={{ headerShown: false }} />
-        
-      </Stack.Navigator>
+
+            <Stack.Screen
+                name='Register'
+                component={Register}
+                options={{ headerShown: false }} />
+            <Stack.Screen
+                name='Login'
+                component={Login}
+                options={{ headerShown: false }} />
+            <Stack.Screen
+                name='Home'
+                component={BottomTabs}
+                options={{ headerShown: false }} />
+
+        </Stack.Navigator>
     )
 }
 
