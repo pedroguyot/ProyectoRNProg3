@@ -15,16 +15,21 @@ class Register extends Component {
     }
 
     componentDidMount() {
-            auth.onAuthStateChanged(user => {
-                console.log(user)
-                if (user) {
-                    this.props.navigation.replace('Home');
-                    console.log('Salio bien')
-                }
-            });
-        }
+        auth.onAuthStateChanged(user => {
+            console.log(user)
+            if (user) {
+                this.props.navigation.replace('Home');
+                console.log('Salio bien')
+            }
+        });
+    }
 
     registro(email, userName, password) {
+        if (userName === '') {
+            this.setState({ error: 'El nombre de usuario es obligatorio' });
+            return;
+        }
+
         console.log('Email ingresado: ', this.state.email);
         console.log('Username ingresado: ', this.state.userName);
         console.log('Password ingresado: ', this.state.password);
