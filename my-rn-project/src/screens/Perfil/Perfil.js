@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, TextInput, FlatList } from 'react-native';
 import { db, auth } from '../../firebase/config';
-import Usuario from '../../components/Usuario';
+import BorrarPost from '../../components/BorrarPost';
+import MostrarPerfil from '../../components/MostrarPerfil';
 
 export default class Perfil extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class Perfil extends Component {
 
 
 
-  logout() {
+  logout(){
     auth.signOut()
       .then(() => this.props.navigation.navigate('Login'))
       .catch(error => console.log('error en logout', error))
@@ -24,6 +25,9 @@ export default class Perfil extends Component {
     return (
       <View>
         <Text>Mi Perfil</Text>
+        <MostrarPerfil user={auth.currentUser} />
+
+       <BorrarPost/>
 
         <TouchableOpacity onPress={() => this.logout()}>
           <Text>Cerrar Sesion</Text>
