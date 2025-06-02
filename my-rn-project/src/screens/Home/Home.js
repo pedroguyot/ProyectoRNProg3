@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { db } from '../../firebase/config';
-import Posteo from '../Posteo/Posteo';
+import NuevoPosteo from '../NuevoPosteo/NuevoPosteo';
 import { FlatList } from 'react-native-web';
 import RemerberMe from '../RemerberMe/RemerberMe';
 
@@ -48,7 +48,7 @@ class Home extends Component {
                     <FlatList style={styles.FlatList}
                         data={this.state.posts}
                         keyExtractor={(item) => item.id}
-                        renderItem={({ item }) => <Posteo postData={item} />}
+                        renderItem={({ item }) => <NuevoPosteo postData={item} />}
                     />
                 )}
             </View>
